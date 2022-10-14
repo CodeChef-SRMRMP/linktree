@@ -11,7 +11,6 @@ import {
 } from "react-icons/tfi";
 
 const Home: NextPage = ({ socials, linksReformated: links }: any) => {
-  console.log(links);
   return (
     <div className="w-screen h-screen">
       <Head>
@@ -80,11 +79,13 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
           })}
         </div>
         <div className="mx-10 md:mx-0 py-10 space-y-5">
-          <LinkCard
-            image="https://bit.ly/3CYRgnG"
-            title="Buidlers Connect Meetup Pass"
-            redirect="https://lu.ma/BuidlersConnect"
-          />
+          {links.map((link: any) => (
+            <LinkCard
+              image={link.thumbnail}
+              title={link.title}
+              redirect={link.redirect_url}
+            />
+          ))}
         </div>
       </div>
     </div>
