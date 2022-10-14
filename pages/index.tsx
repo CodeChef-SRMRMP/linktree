@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import LinkCard from "../components/LinkCard";
 import { client } from "../components/sanityClient";
-import { useRouter } from "next/router";
+import imageUrlBuilder from "@sanity/image-url";
 import Head from "next/head";
 import {
   TfiTwitter,
@@ -10,8 +10,8 @@ import {
   TfiGithub,
 } from "react-icons/tfi";
 
-const Home: NextPage = ({ socials }: any) => {
-  console.log(socials);
+const Home: NextPage = ({ socials, linksReformated: links }: any) => {
+  console.log(links);
   return (
     <div className="w-screen h-screen">
       <Head>
@@ -92,13 +92,26 @@ const Home: NextPage = ({ socials }: any) => {
 };
 
 export async function getServerSideProps(context: any) {
-  const socialsGroq = `*[_type=="socials"]{_updatedAt,title, profile_link}|order(dateTime("_updatedAt"))`;
+  const builder = imageUrlBuilder(client);
 
+  function urlFor(source: any) {
+    return builder.image(source);
+  }
+
+  const socialsGroq = `*[_type=="socials"]{_updatedAt,title, profile_link}|order(dateTime("_updatedAt"))`;
   const socials = await client.fetch(socialsGroq);
+
+  const linksGroq = `*[_type=="links"]{_updatedAt, title, thumbnail, redirect_url}|order(dateTime(_updatedAt) desc)`;
+  const links = await client.fetch(linksGroq);
+  const linksReformated = links.map((link: any) => ({
+    ...link,
+    thumbnail: urlFor(link.thumbnail).url(),
+  }));
 
   return {
     props: {
       socials,
+      linksReformated,
     },
   };
 }
