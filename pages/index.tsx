@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import LinkCard from "../components/LinkCard";
+import { client } from "../components/sanityClient";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import {
   TfiTwitter,
@@ -8,7 +10,8 @@ import {
   TfiGithub,
 } from "react-icons/tfi";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ socials }: any) => {
+  console.log(socials);
   return (
     <div className="w-screen h-screen">
       <Head>
@@ -27,10 +30,54 @@ const Home: NextPage = () => {
           <h1 className="text-center font-bold text-2xl">@CodeChefSrmRmp</h1>
         </div>
         <div className="flex justify-center space-x-5 mt-5">
-          <TfiTwitter className="social-icons" />
-          <TfiInstagram className="social-icons" />
-          <TfiLinkedin className="social-icons" />
-          <TfiGithub className="social-icons" />
+          {socials.map((social: any) => {
+            if (social.title == "Twitter")
+              return (
+                <a
+                  key={social.title}
+                  target="_blank"
+                  href={social.profile_link}
+                >
+                  <TfiTwitter className="social-icons" />
+                </a>
+              );
+          })}
+          {socials.map((social: any) => {
+            if (social.title == "Github")
+              return (
+                <a
+                  key={social.title}
+                  target="_blank"
+                  href={social.profile_link}
+                >
+                  <TfiGithub className="social-icons" />
+                </a>
+              );
+          })}
+          {socials.map((social: any) => {
+            if (social.title == "Instagram")
+              return (
+                <a
+                  key={social.title}
+                  target="_blank"
+                  href={social.profile_link}
+                >
+                  <TfiInstagram className="social-icons" />
+                </a>
+              );
+          })}
+          {socials.map((social: any) => {
+            if (social.title == "LinkedIn")
+              return (
+                <a
+                  key={social.title}
+                  target="_blank"
+                  href={social.profile_link}
+                >
+                  <TfiLinkedin className="social-icons" />
+                </a>
+              );
+          })}
         </div>
         <div className="mx-10 md:mx-0 py-10 space-y-5">
           <LinkCard
@@ -43,5 +90,17 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getServerSideProps(context: any) {
+  const socialsGroq = `*[_type=="socials"]{_updatedAt,title, profile_link}|order(dateTime("_updatedAt"))`;
+
+  const socials = await client.fetch(socialsGroq);
+
+  return {
+    props: {
+      socials,
+    },
+  };
+}
 
 export default Home;
