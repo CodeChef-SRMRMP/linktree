@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
+import LinkCard from "../components/LinkCard";
 import Head from "next/head";
-import Image from "next/image";
+import {
+  TfiTwitter,
+  TfiInstagram,
+  TfiLinkedin,
+  TfiGithub,
+} from "react-icons/tfi";
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-1/2 mx-auto mt-10">
+      <div className="md:w-1/2 mx-auto mt-10">
         <div className="space-y-4">
           <img
             src="./images/logo.png"
@@ -19,6 +25,24 @@ const Home: NextPage = () => {
           />
 
           <h1 className="text-center font-bold text-2xl">@CodeChefSrmRmp</h1>
+        </div>
+        <div className="flex justify-center space-x-5 mt-5">
+          <TfiTwitter className="social-icons" />
+          <TfiInstagram className="social-icons" />
+          <TfiLinkedin className="social-icons" />
+          <TfiGithub className="social-icons" />
+        </div>
+        <div className="mt-10 space-y-5">
+          <LinkCard
+            image="https://bit.ly/3CYRgnG"
+            title="Buidlers Connect Meetup Pass"
+            redirect=""
+          />
+          <LinkCard
+            image="https://bit.ly/3CYRgnG"
+            title="Buidlers Connect Meetup Pass"
+            redirect=""
+          />
         </div>
       </div>
     </div>
