@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           <img
             src="./images/logo.png"
             alt="codechef-logo"
-            className="cursor-pointer hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 shadow-xl border-black/20 h-36 w-36"
+            className="cursor-pointer md:hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 shadow-xl border-black/20 h-36 w-36"
           />
 
           <h1 className="text-center font-bold text-2xl">@CodeChefSrmRmp</h1>
@@ -32,16 +32,11 @@ const Home: NextPage = () => {
           <TfiLinkedin className="social-icons" />
           <TfiGithub className="social-icons" />
         </div>
-        <div className="mt-10 space-y-5">
+        <div className="mx-10 md:mx-0 py-10 space-y-5">
           <LinkCard
             image="https://bit.ly/3CYRgnG"
             title="Buidlers Connect Meetup Pass"
-            redirect=""
-          />
-          <LinkCard
-            image="https://bit.ly/3CYRgnG"
-            title="Buidlers Connect Meetup Pass"
-            redirect=""
+            redirect="https://lu.ma/BuidlersConnect"
           />
         </div>
       </div>
