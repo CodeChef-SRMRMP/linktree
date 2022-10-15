@@ -105,10 +105,16 @@ export async function getServerSideProps(context: any) {
 
   const linksGroq = `*[_type=="links"]{_updatedAt, title, thumbnail, redirect_url}|order(dateTime(_updatedAt) desc)`;
   const links = await client.fetch(linksGroq);
-  const linksReformated = links.map((link: any) => ({
-    ...link,
-    thumbnail: urlFor(link.thumbnail).url(),
-  }));
+  const linksReformated = links.map((link: any) => {
+    if (link.thumbnail) {
+      return {
+        ...link,
+        thumbnail: urlFor(link.thumbnail).url(),
+      };
+    } else {
+      return link;
+    }
+  });
 
   return {
     props: {

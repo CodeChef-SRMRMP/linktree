@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { FiCopy } from "react-icons/fi";
+import { AiOutlineLink } from "react-icons/ai";
 
 interface Props {
   image?: string;
@@ -27,7 +28,12 @@ const LinkCard = ({ image, title, redirect }: Props) => {
         href={redirect}
         target="_blank"
       >
-        <img className="w-10 h-10" src={image} alt="logo" />
+        {image ? (
+          <img className="w-10 h-10" src={image} alt="logo" />
+        ) : (
+          <AiOutlineLink className="md:inline-flex social-icons z-40" />
+        )}
+
         <p className="text-center text-sm mx-auto font-bold">{title}</p>
       </a>
       <FiCopy
