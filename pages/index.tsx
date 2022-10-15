@@ -23,7 +23,7 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
           <img
             src="./images/logo.png"
             alt="codechef-logo"
-            className="cursor-pointer md:hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 shadow-xl border-black/20 h-36 w-36"
+            className="cursor-pointer md:hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 bg-white shadow-xl border-black/40 h-36 w-36"
           />
 
           <h1 className="text-center font-bold text-2xl">@CodeChefSrmRmp</h1>
