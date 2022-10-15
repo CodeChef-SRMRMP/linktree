@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { IoShareOutline } from "react-icons/io5";
+import { FiCopy } from "react-icons/fi";
 
 interface Props {
   image?: string;
@@ -30,7 +30,7 @@ const LinkCard = ({ image, title, redirect }: Props) => {
         <img className="w-10 h-10" src={image} alt="logo" />
         <p className="text-center text-sm mx-auto font-bold">{title}</p>
       </a>
-      <IoShareOutline
+      <FiCopy
         className={`${
           isHovered ? "visible" : "invisible"
         } hidden md:inline-flex social-icons z-40`}
