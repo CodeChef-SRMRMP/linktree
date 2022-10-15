@@ -15,10 +15,10 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
     <div className="w-screen h-screen">
       <Head>
         <title>Links</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.png" />
       </Head>
 
-      <div className="md:w-1/2 mx-auto mt-10">
+      <div className="md:w-1/2 mx-auto pt-10">
         <div className="space-y-4">
           <img
             src="./images/logo.png"
