@@ -29,7 +29,7 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
           <h1 className="text-center font-bold text-2xl">@CodeChefSrmRmp</h1>
         </div>
         <div className="flex justify-center space-x-5 mt-5">
-          {socials.map((social: any) => {
+          {socials?.map((social: any) => {
             if (social.title == "Twitter")
               return (
                 <a
@@ -41,7 +41,7 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
                 </a>
               );
           })}
-          {socials.map((social: any) => {
+          {socials?.map((social: any) => {
             if (social.title == "Github")
               return (
                 <a
@@ -53,7 +53,7 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
                 </a>
               );
           })}
-          {socials.map((social: any) => {
+          {socials?.map((social: any) => {
             if (social.title == "Instagram")
               return (
                 <a
@@ -65,7 +65,7 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
                 </a>
               );
           })}
-          {socials.map((social: any) => {
+          {socials?.map((social: any) => {
             if (social.title == "LinkedIn")
               return (
                 <a
@@ -79,7 +79,7 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
           })}
         </div>
         <div className="mx-10 md:mx-0 py-10 space-y-5">
-          {links.map((link: any, index: any) => (
+          {links?.map((link: any, index: any) => (
             <LinkCard
               key={index}
               image={link.thumbnail}
