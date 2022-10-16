@@ -12,7 +12,7 @@ import {
 
 const Home: NextPage = ({ socials, linksReformated: links }: any) => {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen font-oswald">
       <Head>
         <title>Links</title>
         <link rel="icon" href="/images/logo.png" />
@@ -26,9 +26,9 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
             className="cursor-pointer md:hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 bg-white shadow-xl border-black/40 h-36 w-36"
           />
 
-          <h1 className="text-center font-bold text-2xl">@CodeChefSrmRmp</h1>
+          <h1 style={{fontWeight: 600}} className="text-center text-4xl font-alkalami">CodeChef SRM RMP</h1>
         </div>
-        <div className="flex justify-center space-x-5 mt-5">
+        <div className="flex justify-center space-x-5 mt-7 ">
           {socials?.map((social: any) => {
             if (social.title == "Twitter")
               return (
