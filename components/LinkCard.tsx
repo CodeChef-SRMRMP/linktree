@@ -34,7 +34,7 @@ const LinkCard = ({ image, title, redirect }: Props) => {
           <AiOutlineLink className="md:inline-flex social-icons z-40" />
         )}
 
-        <p className="text-center text-sm mx-auto font-bold">{title}</p>
+        <p className="text-center text-sm md:text-md mx-auto font-extrabold font-ptserif">{title}</p>
       </a>
       <FiCopy
         className={`${
