@@ -26,6 +26,7 @@ yarn run dev
 <table>
   <tbody>
     <tr>
+    <td align="center"><a href="http://chanakyha-coder.xyz"><img src="https://avatars.githubusercontent.com/u/66877639?v=4?s=100" width="100px;" alt="Chanakyha"/><br /><sub><b>Chanakyha</b></sub></a><br /><a href="https://github.com/CodeChef-SRMRMP/linktree/commits?author=chanakyha" title="Code">💻</a> <a href="#design-chanakyha" title="Design">🎨</a> <a href="#maintenance-chanakyha" title="Maintenance">🚧</a></td>
       <td align="center"><a href="https://linktr.ee/iam_ragul"><img src="https://avatars.githubusercontent.com/u/86113269?v=4?s=100" width="100px;" alt="Ragul Sankar"/><br /><sub><b>Ragul Sankar</b></sub></a><br /><a href="https://github.com/CodeChef-SRMRMP/linktree/commits?author=RagulSankar04" title="Code">💻</a> <a href="#ideas-RagulSankar04" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
