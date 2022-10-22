@@ -1,7 +1,5 @@
 {
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": false,
   "commitConvention": "angular",
@@ -11,11 +9,14 @@
       "name": "Chanakyha",
       "avatar_url": "https://avatars.githubusercontent.com/u/66877639?v=4",
       "profile": "http://chanakyha-coder.xyz",
-      "contributions": [
-        "code",
-        "design",
-        "maintenance"
-      ]
+      "contributions": ["code", "design", "maintenance"]
+    },
+    {
+      "login": "RagulSankar04",
+      "name": "Ragul Sankar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/86113269?v=4",
+      "profile": "https://linktr.ee/iam_ragul",
+      "contributions": ["code", "ideas"]
     }
   ],
   "contributorsPerLine": 7,
