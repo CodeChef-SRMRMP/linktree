@@ -23,10 +23,15 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
           <img
             src="./images/logo.png"
             alt="codechef-logo"
-            className="cursor-pointer md:hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 bg-white shadow-xl border-black/40 h-36 w-36"
+            className="cursor-pointer md:hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 bg-white shadow-xl border-black/40 object-cover h-36 w-36"
           />
 
-          <h1 style={{fontWeight: 600}} className="text-center text-4xl font-alkalami">CodeChef SRM RMP</h1>
+          <h1
+            style={{ fontWeight: 600 }}
+            className="text-center text-4xl font-alkalami"
+          >
+            CodeChef SRM RMP
+          </h1>
         </div>
         <div className="flex justify-center space-x-5 mt-7 ">
           {socials?.map((social: any) => {
