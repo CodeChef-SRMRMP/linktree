@@ -15,13 +15,13 @@ const Home: NextPage = ({ socials, linksReformated: links }: any) => {
     <div className="w-screen h-screen font-oswald">
       <Head>
         <title>Links</title>
-        <link rel="icon" href="/images/logo.png" />
+        <link rel="icon" href="/images/logo-white.png" />
       </Head>
 
       <div className="md:w-1/2 mx-auto pt-10">
         <div className="space-y-4">
           <img
-            src="./images/logo.png"
+            src="./images/logo-new.png"
             alt="codechef-logo"
             className="cursor-pointer md:hover:scale-75 duration-300 ease-out rounded-full mx-auto border-2 bg-white shadow-xl border-black/40 object-cover h-36 w-36"
           />
